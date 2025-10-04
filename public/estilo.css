@@ -1,0 +1,205 @@
+/* Cores: Usando Roxo, Rosa, Verde e Vermelho */
+:root {
+    --purple-main: #6A1B9A;
+    /* Roxo Principal */
+    --pink-vibrant: #D81B60;
+    /* Rosa Vibrante */
+    --pink-light: #FCE4EC;
+    /* Rosa mais claro para fundo de item */
+    --pink-hover: #F8BBD0;
+    /* Rosa para hover */
+    --button-hover: #4A148C;
+    /* Roxo escuro para hover de botão */
+    --green-success: #4CAF50;
+    /* Verde para Concluir */
+    --red-danger: #C62828;
+    /* Vermelho para Excluir */
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Layout de página */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+    /* Fundo Leve */
+    color: #333;
+}
+
+/* 1. Cabeçalho (Header) */
+header {
+    text-align: center;
+    padding: 1rem;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2rem;
+    color: var(--purple-main);
+    /* Roxo */
+    margin-bottom: 0.5rem;
+}
+
+/* 2. Conteúdo principal (Mantido) */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+    width: 100%;
+}
+
+.todo-container {
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Card */
+.card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos */
+h2 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    color: var(--purple-main);
+    /* Roxo */
+}
+
+/* Lista de tarefas */
+ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+ul li {
+    background: var(--pink-light);
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.6rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s ease;
+    border-left: 6px solid var(--pink-vibrant);
+    /* Borda Rosa */
+}
+
+ul li:hover {
+    background: var(--pink-hover);
+    transform: translateX(3px);
+}
+
+/* Botões Padrão (para "Nova Tarefa" e formulários) */
+button,
+input[type="submit"],
+.button {
+    /* Aplicando no link.button */
+    background: var(--pink-vibrant);
+    /* Rosa */
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    /* Para links */
+    transition: 0.3s;
+}
+
+button:hover,
+input[type="submit"]:hover,
+.button:hover {
+    background: var(--button-hover);
+    /* Roxo Escuro */
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 0.6rem;
+    margin-right: 0.5rem;
+    border: 1px solid var(--purple-main);
+    border-radius: 6px;
+}
+
+/* Formulário (Mantido) */
+.form-tarefa {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.form-tarefa input[type="text"] {
+    flex: 1;
+}
+
+.form-tarefa input[type="submit"] {
+    margin-left: 0.5rem;
+}
+
+/* Tarefas concluídas */
+ul li.concluida {
+    border-left-color: var(--green-success);
+    /* Borda verde */
+    opacity: 0.7;
+}
+
+ul li.concluida span {
+    text-decoration: line-through;
+    color: #999;
+}
+
+/* Ações dos itens da lista */
+ul li .acoes {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* 3. Botão Concluir (Verde) e Excluir (Vermelho) */
+
+.botao-concluir {
+    background: var(--green-success);
+}
+
+.botao-concluir:hover {
+    background: #388E3C;
+}
+
+.botao-excluir {
+    background: var(--red-danger);
+}
+
+.botao-excluir:hover {
+    background: #B71C1C;
+}
+
+/* 4. Footer - Deixando igual ao Cabeçalho */
+footer {
+    background-color: #fff;
+    /* Fundo branco, igual ao header */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    /* Sombra para cima */
+    text-align: center;
+    padding: 1rem;
+}
